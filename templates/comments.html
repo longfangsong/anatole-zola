@@ -1,0 +1,35 @@
+{% if config.extra.comment.disqus %}
+    <a id="comments"></a>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_shortname = "{{ config.extra.comment.disqus.name }}";
+        var disqus_identifier = "{{ page.path }}";
+        var disqus_title = "{{ page.title }}";
+        var disqus_url = "{{ config.extra.comment.disqus.url }}/#{{ page.path }}";
+        (function() {
+            var dsq = document.createElement("script"); dsq.type = "text/javascript"; dsq.async = true;
+            dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+            (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(dsq);
+        })();
+    </script>
+    <script id="dsq-count-scr" src="//{{ config.extra.comment.disqus.name }}.disqus.com/count.js" async></script>
+{% endif %}
+
+{% if config.extra.comment.valine %}
+    <a id="comments"></a>
+    <div id="vcomments" style="margin:30px;"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+      var valine = new Valine({
+        el: "#vcomments",
+        notify: "{{ config.extra.comment.valine.notify }}" || false, 
+        verify: "{{ config.extra.comment.valine.verify }}" || false, 
+        app_id: "{{ config.extra.comment.valine.appid }}",
+        app_key: "{{ config.extra.comment.valine.appkey }}",
+        placeholder: "{{ config.extra.comment.valine.placeholder }}",
+        path: window.location.pathname,
+        avatar: "{{ config.extra.comment.valine.avatar }}"
+      });
+    </script>
+{% endif %}

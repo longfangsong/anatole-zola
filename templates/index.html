@@ -1,0 +1,57 @@
+{% extends "basic.html" %}
+
+{% block content %}
+    {% for page in paginator.pages %}
+      <section class="post animated fadeInDown">
+        <div class="post-title">
+                <h3><a href="{{ page.path }}">{{ page.title }}</a></h3>
+        </div>
+        <div class="post-content"> 
+              <p>
+                {% if page.extra.summary %}
+                    {{ page.extra.summary | safe | striptags }}
+                {% else %}
+                    {{ page.content | safe | striptags | truncate(length=100) }}
+                {% endif %}
+              </p>
+        </div>
+        <div class="post-footer">
+              <div class="meta">
+                <div class="info">
+                  {% if page.date %}
+                    <i class="far fa-sun"></i><span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+                  {% endif %}
+                  {% if config.extra.comment %}
+					          <i class="far fa-comments"></i>
+                    <a href="{{ page.path }}#comments">Comments</a>
+                  {% endif %}
+                  {% if page.taxonomies.tags %}
+                    <i class="fas fa-tags"></i>
+                    {% for tag in page.taxonomies.tags %}
+                      <a class="tag" href="/tags/{{tag}}">&nbsp;{{tag}}</a>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              </div>
+        </div>
+      </section>
+    {% endfor %}
+    <div class="pagination">
+		  <ul class="clearfix">
+        {% if paginator.next %}
+          <li class="next pagbuttons">
+            <a class="btn" role="navigation" href="{{ paginator.next }}">
+              Next Page
+            </a>
+          </li>
+        {% endif %}
+        {% if paginator.previous %}
+          <li class="pre pagbuttons">
+            <a class="btn" role="navigation" href="{{ paginator.previous }}">
+              Last Page
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+{% endblock content %}

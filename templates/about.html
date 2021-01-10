@@ -1,0 +1,8 @@
+{% extends "basic.html" %}
+
+{% block content %}
+<article class="post animated fadeInDown">
+  <h1><a href="{{ section.path }}"> {{ section.title }} </a></h1>
+  <div class="post-content">{{ section.content | safe }}</div>
+</article>
+{% endblock content %}

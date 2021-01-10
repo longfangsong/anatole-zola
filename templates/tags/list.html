@@ -1,0 +1,15 @@
+{% extends "basic.html" %}
+
+{% block content %}
+<div class="archive animated fadeInDown">
+    <ul class="list-with-title">
+      <div class="listing-title">Tags</div>
+          {% for term in terms %}
+          <li class="tag-list-item">
+              <a class="tagname" href="/tags/{{ term.name }}">{{ term.name }}</a>
+              <span class="tagcount">{{ term.pages | length }}</span>
+          </li>
+          {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

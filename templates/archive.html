@@ -1,0 +1,22 @@
+{% extends "basic.html" %}
+
+{% block content %}
+<div class="archive animated fadeInDown">
+    <ul class="list-with-title">
+        {% set section_item = get_section(path="_index.md") %}
+        {% for year, posts in section_item.pages | group_by(attribute="year") %}
+            <div class="listing-title">{{ year }}</div>
+            <ul class="listing">
+                {% for post in posts %}
+                <div class="listing-item">
+                  <div class="listing-post">
+                    <a href="{{ post.path }}" title="{{ post.title }}">{{ post.title }}</a>
+                    <div class="post-time"><span class="date">{{ post.date | date(format="%Y-%m-%d") }}</span></div>
+                  </div>
+                </div>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

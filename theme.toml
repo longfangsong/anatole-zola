@@ -1,0 +1,21 @@
+name = "anatole-zola"
+description = "A port of farbox-theme-Anatole for zola"
+license = "MIT"
+homepage = "https://github.com/longfangsong/anatole-zola"
+min_version = "0.4.0"
+demo = "https://longfangsong.github.io/next"
+
+[extra]
+
+# Note the origin design is from https://github.com/hi-caicai/farbox-theme-Anatole
+# The author just port the code into zola
+# See the [original] section
+[author]
+name = "longfangsong"
+homepage = "https://github.com/longfangsong"
+
+[original]
+author = "hi-caicai"
+homepage = "http://anatole.cai-cai.me/"
+repo = "https://github.com/hi-caicai/farbox-theme-Anatole"
+# also thanks the [Hexo Porting](https://github.com/Ben02/hexo-theme-Anatole)

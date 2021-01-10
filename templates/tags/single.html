@@ -1,0 +1,21 @@
+{% extends "basic.html" %}
+
+{% block content %}
+<div class="archive animated fadeInDown">
+    <ul class="list-with-title">
+        <div class="archive">
+        <div class="listing-title">{{ term.name }}</div>
+        <ul class="listing">
+        {% for post in term.pages %}
+            <div class="listing-item">
+                <div class="listing-post">
+                    <a href="{{ post.path }}" title="{{ post.title }}">{{ post.title }}</a>
+                    <div class="post-time"><span class="date">{{ post.date | date(format="%Y-%m-%d") }}</span></div>
+                </div>
+            </div>
+        {% endfor %}
+        </ul>
+        </div>
+    </ul>
+</div>
+{% endblock content %}
