@@ -23,7 +23,7 @@
   <div class="logo-title">
     <div class="title">
       <img src={{ get_url(path="images/logo@2x.png" ) }} style="width:127px;" alt="logo"/>
-      <h3><a href="/">{{ config.title }}</a></h3>
+      <h3><a href="{{ get_url(path="@/_index.md") }}">{{ config.title }}</a></h3>
       <div class="description">
         <p>{{ config.description }}</p>
       </div>
@@ -61,13 +61,13 @@
 <div id="main">
   <div class="page-top animated fadeInDown">
     <div class="nav">
-      <li><a {% if current_path == "/" or current_path is starting_with("/page/") %}class="current"{% endif %} href="/">{{ trans(key="home") }}</a></li><li><a {% if current_path is starting_with("/about") %}class="current"{% endif %} href="/about">{{ trans(key="about") }}</a></li>
+      <li><a {% if current_path == "/" or current_path is starting_with("/page/") %}class="current"{% endif %} href="{{ get_url(path="@/_index.md") }}">{{ trans(key="home") }}</a></li><li><a {% if current_path is starting_with("/about") %}class="current"{% endif %} href="{{ get_url(path="@/about/_index.md") }}">{{ trans(key="about") }}</a></li>
       {%- if config.extra.show.tags -%}
-      <li><a {% if current_path is starting_with("/tags") %}class="current"{% endif %} href="/tags">{{ trans(key="tags") }}</a></li>
+      <li><a {% if current_path is starting_with("/tags") %}class="current"{% endif %} href="{{ get_url(path="@/_index.md") }}tags">{{ trans(key="tags") }}</a></li>
       {%- endif -%}
-      <li><a {% if current_path is starting_with("/archive") %}class="current"{% endif %} href="/archive">{{ trans(key="archive") }}</a></li>
+      <li><a {% if current_path is starting_with("/archive") %}class="current"{% endif %} href="{{ get_url(path="@/archive/_index.md") }}">{{ trans(key="archive") }}</a></li>
       {%- if config.extra.show.links -%}
-      <li><a {% if current_path is starting_with("/links") %}class="current"{% endif %} href="/links">{{ trans(key="links") }}</a></li>
+      <li><a {% if current_path is starting_with("/links") %}class="current"{% endif %} href="{{ get_url(path="@/links/_index.md") }}">{{ trans(key="links") }}</a></li>
       {%- endif -%}
     </div>
     <div class="information">

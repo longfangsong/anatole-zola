@@ -13,7 +13,6 @@ taxonomies = [
     {name = "tags"},
 ]
 
-[translations]
 [translations.en]
 about = "About"
 home = "Home"

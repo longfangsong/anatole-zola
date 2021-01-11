@@ -6,6 +6,8 @@ Port [Anatole theme for farbox](https://github.com/hi-caicai/farbox-theme-Anatol
 
 ![screenshot-mobile](./screenshot-mobile.png)
 
+You can view my blog for an example configuation, with customizations.
+
 ## Installation
 
 First download this theme to your `themes` directory:
@@ -19,6 +21,8 @@ and then enable it in your `config.toml`:
 ```toml
 theme = "anatole-zola"
 ```
+
+And copy the `content/about`, `content/archive`, `content/_index.md` in the theme folder to your own content folder. And edit the `_index.md` in `about` folder to edit the content of your `about` page.
 
 ## Options
 
@@ -41,17 +45,53 @@ Currently, we have English and Chinese translation, set the `default_language` i
 default_language = "zh"
 ```
 
+It's sad that transations in themes are not working, you can copy these to your `config.toml`:
+
+```toml
+[translations.en]
+about = "About"
+home = "Home"
+tags = "Tags"
+archive = "Archive"
+links = "Links"
+next_page = "Next Page"
+last_page = "Last Page"
+
+[translations.zh]
+home = "首页"
+about = "关于"
+tags = "标签"
+archive = "归档"
+links = "友链"
+next_page = "下一页"
+last_page = "上一页"
+```
+
 Feel free to create a pull request if you want to translate the promotes into other languages!
 
 ### Sections
 
-Tags and links sections are optional, set corresponding fields `false` if you don't want them.
+Tags and links sections are optional.
 
-```toml
-[extra.show]
-tags = false
-links = false
-```
+- If you want to enable the tags page, add 
+  ```toml
+  taxonomies = [
+    {name = "tags"},
+  ]
+  
+  [extra.show]
+  tags = true
+  ```
+  To your `config.toml`
+  
+- If you want to enable the links page, add 
+
+  ```toml
+  [extra.show]
+  links = true
+  ```
+
+  and copy `content/links` to your own `content` library. And edit the `_index.md` in it to edit its content.
 
 ### Sidebar menu
 
@@ -91,3 +131,31 @@ And [disqus](https://disqus.com/admin/create/), note disqus does not work in Mai
 [extra.comment.disqus]
 name = "longfangsong"
 ```
+
+## Customize
+
+There are several points I left in the origin templates for you to customize your site.
+
+### More style
+
+You can create a `blog.scss` or something similiar in the your `sass` folder, add a `templates.html` with following content:
+
+```html
+{% extends "anatole-zola/templates/basic.html" %}
+{% block extra_head %}
+<link rel="stylesheet" href="{{ get_url(path="blog.css") }}">
+{% endblock %}
+```
+
+### More social links
+
+You can add more social links by adding a `templates.html` with some content added to `more_social_link` block:
+
+```html
+{% extends "anatole-zola/templates/basic.html" %}
+{% block more_social_link %}
+<div id="pirate" data-wordart-src="//cdn.wordart.com/json/685czi4rqil5" style="width: 100%;" data-wordart-show-attribution></div>
+{% endblock %}
+```
+
+If you want to use some awsome logos, [font awsome icons](https://fontawesome.com/icons?d=gallery) are already available.

@@ -2,7 +2,7 @@
 
 {% block content %}
 <article class="post animated fadeInDown">
-  <h1><a href="{{ page.path }}">{{ page.title }}</a></h1>
+  <h1><a href="{{ page.permalink }}">{{ page.title }}</a></h1>
   <div class="post-content">{{ page.content | safe }}</div>
   <div class="post-footer">
     <div class="meta">
@@ -13,7 +13,7 @@
         {% if page.taxonomies.tags %}
           <i class="fas fa-tags"></i>
           {% for tag in page.taxonomies.tags %}
-            <a class="tag" href="/tags/{{tag}}">&nbsp;{{tag}}</a>
+            <a class="tag" href="{{ get_url(path="@/_index.md") }}tags/{{tag}}">&nbsp;{{tag}}</a>
           {% endfor %}
         {% endif %}
       </div>
