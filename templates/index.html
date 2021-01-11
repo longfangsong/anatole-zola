@@ -6,7 +6,7 @@
         <div class="post-title">
                 <h3><a href="{{ page.path }}">{{ page.title }}</a></h3>
         </div>
-        <div class="post-content"> 
+        <div class="post-content">
               <p>
                 {% if page.extra.summary %}
                     {{ page.extra.summary | safe | striptags }}
@@ -41,14 +41,14 @@
         {% if paginator.next %}
           <li class="next pagbuttons">
             <a class="btn" role="navigation" href="{{ paginator.next }}">
-              Next Page
+              {{ trans(key="next_page") }}
             </a>
           </li>
         {% endif %}
         {% if paginator.previous %}
           <li class="pre pagbuttons">
             <a class="btn" role="navigation" href="{{ paginator.previous }}">
-              Last Page
+              {{ trans(key="last_page") }}
             </a>
           </li>
         {% endif %}

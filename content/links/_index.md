@@ -1,6 +1,6 @@
 +++
 title = "Links"
-template = "about.html"
+template = "links.html"
 paginate_by = 0
 +++
 
