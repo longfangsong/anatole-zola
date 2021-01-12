@@ -6,6 +6,7 @@ date = 2020-01-02T15:00:00Z
 tags = ["markdown", "demo"]
 [extra]
 summary = "Shows how basic Markdown syntax are rendered"
+mathjax = "TeX-MML"
 +++
 
 <!-- more -->
@@ -121,3 +122,10 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+
+## mathjax
+
+$$
+a = 1\\
+b = 2+a 
+$$
