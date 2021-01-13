@@ -6,7 +6,7 @@ date = 2020-01-02T15:00:00Z
 tags = ["markdown", "demo"]
 [extra]
 summary = "Shows how basic Markdown syntax are rendered"
-mathjax = "TeX-MML"
+mathjax = "tex-mml"
 +++
 
 <!-- more -->
@@ -126,6 +126,14 @@ Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and ot
 ## mathjax
 
 $$
-a = 1\\
-b = 2+a 
+\displaylines{x = a + b \\\\ y = b + c}
+$$
+
+$$
+\require{bussproofs}
+\begin{prooftree}
+\AxiomC{A}
+\AxiomC{B}
+\BinaryInfC{D}
+\end{prooftree}
 $$

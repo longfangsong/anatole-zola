@@ -3,11 +3,7 @@
 {% block content %}
 <article class="post animated fadeInDown">
   <h1><a href="{{ page.permalink }}">{{ page.title }}</a></h1>
-  {% if page.extra.mathjax %}
-    <div class="post-content">{{ page.content | replace(from="\", to="\\") | safe }}</div>
-  {% else %}
-    <div class="post-content">{{ page.content | safe }}</div>
-  {% endif %}
+  <div class="post-content">{{ page.content | safe }}</div>
   <div class="post-footer">
     <div class="meta">
       <div class="info">
@@ -34,14 +30,17 @@
 </div>
 {% include "comments.html" %}
 {% if page.extra.mathjax %}
-<script id="MathJax-script" async src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config={{ page.extra.mathjax }}-AM_CHTML"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script>
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ["\\(","\\)"]],
-      displayMath: [['$$','$$'], ["\\[","\\]"]]
+  MathJax = {
+    tex: {
+      displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
     }
-  });
+  };
 </script>
-{% endif %}
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/{{ page.extra.mathjax }}-chtml.js">
+</script>
+  {% endif %}
 {% endblock content %}
