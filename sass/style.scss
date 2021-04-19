@@ -331,7 +331,7 @@ img {
       font-size: 16px;
     }
 
-    & > p > code {
+    & > p > code, & > ul code, .footnote-definition > p code {
       padding: 1px 3px;
       font-family: Inconsolata, monospace, sans-serif;
       font-size: 0.85em;
@@ -345,6 +345,7 @@ img {
     pre {
       padding: 4px 6px;
       border-radius: 6px;
+      overflow: scroll;
     }
 
     blockquote {
