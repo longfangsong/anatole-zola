@@ -105,6 +105,8 @@ facebook = ""
 instagram = ""
 dribbble = ""
 weibo = ""
+linkedin = ""
+flickr = ""
 ```
 
 Fill in your username if you want! And the logo won't appear if you leave it empty.

@@ -37,6 +37,8 @@ facebook = ""
 instagram = "r"
 dribbble = "t"
 weibo = "y"
+linkedin = ""
+flickr = ""
 
 [extra.show]
 tags = true
