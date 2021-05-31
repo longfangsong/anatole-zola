@@ -6,7 +6,7 @@
       <div class="listing-title">{{ trans(key="tags") }}</div>
           {% for term in terms %}
           <li class="tag-list-item">
-              <a class="tagname" href="{{ get_url(path="@/_index.md") }}tags/{{ term.name }}">{{ term.name }}</a>
+              <a class="tagname" href="{{ term.permalink }}">{{ term.name }}</a>
               <span class="tagcount">{{ term.pages | length }}</span>
           </li>
           {% endfor %}
