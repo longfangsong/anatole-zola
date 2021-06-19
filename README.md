@@ -139,7 +139,7 @@ And [utterances](https://utteranc.es/):
 ```toml
 [extra.comment.utterances]
 repo = "Your repo for comments"
-issue-term = "pathname"
+issue_term = "pathname"
 theme = "github-light"
 ```
 
