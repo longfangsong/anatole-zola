@@ -73,18 +73,18 @@ Feel free to create a pull request if you want to translate the promotes into ot
 
 Tags and links sections are optional.
 
-- If you want to enable the tags page, add 
+- If you want to enable the tags page, add
   ```toml
   taxonomies = [
     {name = "tags"},
   ]
-  
+
   [extra.show]
   tags = true
   ```
   To your `config.toml`
-  
-- If you want to enable the links page, add 
+
+- If you want to enable the links page, add
 
   ```toml
   [extra.show]
@@ -127,12 +127,22 @@ avatar = "mm" # avatar style https://github.com/xCss/Valine/wiki/avatar-setting-
 placeholder = "Say something here"
 ```
 
-And [disqus](https://disqus.com/admin/create/), note disqus does not work in Mainland China:
+[disqus](https://disqus.com/admin/create/), note disqus does not work in Mainland China:
 
 ```toml
 [extra.comment.disqus]
 name = "longfangsong"
 ```
+
+And [utterances](https://utteranc.es/):
+
+```toml
+[extra.comment.utterances]
+repo = "Your repo for comments"
+issue-term = "pathname"
+theme = "github-light"
+```
+
 
 ## Customize
 
