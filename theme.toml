@@ -3,7 +3,7 @@ description = "A port of farbox-theme-Anatole for zola"
 license = "MIT"
 homepage = "https://github.com/longfangsong/anatole-zola"
 min_version = "0.4.0"
-demo = "https://longfangsong.github.io/blog-next"
+demo = "https://longfangsong.github.io"
 
 [extra]
 
