@@ -93,6 +93,13 @@ Tags and links sections are optional.
 
   and copy `content/links` to your own `content` library. And edit the `_index.md` in it to edit its content.
 
+- If you want to add the author's name on each page, add:
+
+  ```toml
+  [extra]
+  author = "John Doe"
+  ```
+
 ### Sidebar menu
 
 We support a bunch of social links, they are:

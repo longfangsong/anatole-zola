@@ -5,6 +5,9 @@
 {% block content %}
 <article class="post animated fadeInDown">
   <h1><a href="{{ page.permalink }}">{{ page.title }}</a></h1>
+  {% if page.extra.author %}
+  <div class="info">By {{ page.extra.author }}.</div>
+  {% endif %}
   <div class="post-content">{{ page.content | safe }}</div>
   <div class="post-footer">
     <div class="meta">
