@@ -13,7 +13,7 @@ taxonomies = [
     {name = "tags"},
 ]
 
-[translations.en]
+[languages.en.translations]
 about = "About"
 home = "Home"
 tags = "Tags"
@@ -21,7 +21,8 @@ archive = "Archive"
 links = "Links"
 next_page = "Next Page"
 last_page = "Last Page"
-[translations.zh]
+
+[languages.zh.translations]
 home = "首页"
 about = "关于"
 tags = "标签"

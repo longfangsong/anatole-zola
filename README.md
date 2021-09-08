@@ -45,10 +45,10 @@ Currently, we have English and Chinese translation, set the `default_language` i
 default_language = "zh"
 ```
 
-It's sad that transations in themes are not working, you can copy these to your `config.toml`:
+It's sad that translations in themes are not working, you can copy these to your `config.toml`:
 
 ```toml
-[translations.en]
+[languages.en.translations]
 about = "About"
 home = "Home"
 tags = "Tags"
@@ -57,7 +57,7 @@ links = "Links"
 next_page = "Next Page"
 last_page = "Last Page"
 
-[translations.zh]
+[languages.zh.translations]
 home = "首页"
 about = "关于"
 tags = "标签"
