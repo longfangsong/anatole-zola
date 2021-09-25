@@ -19,7 +19,10 @@
               <div class="meta">
                 <div class="info">
                   {% if page.date %}
-                    <i class="far fa-sun"></i><span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+                    <i class="far fa-sun"></i>
+                    <span class="date">
+                      {{ page.date | date(format=trans(key="date_format")) }}
+                    </span>
                   {% endif %}
                   {% if config.extra.comment %}
 					          <i class="far fa-comments"></i>
