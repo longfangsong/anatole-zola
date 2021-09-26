@@ -10,7 +10,9 @@
             <div class="listing-item">
                 <div class="listing-post">
                     <a href="{{ post.permalink }}" title="{{ post.title }}">{{ post.title }}</a>
-                    <div class="post-time"><span class="date">{{ post.date | date(format="%Y-%m-%d") }}</span></div>
+                    <div class="post-time">
+                        <span class="date">{{ post.date | date(format=trans(key="date_format")) }}</span>
+                    </div>
                 </div>
             </div>
         {% endfor %}
