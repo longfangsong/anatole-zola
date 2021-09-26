@@ -107,6 +107,7 @@ We support a bunch of social links, they are:
 ```toml
 [extra.social]
 github = ""
+stackoverflow = "" # use user_id
 twitter = ""
 facebook = ""
 instagram = ""

@@ -33,6 +33,13 @@
     {%- if config.extra.social.github -%}
     <li><a href="https://github.com/{{ config.extra.social.github }}"><i class="fab fa-github"></i></a></li>
     {%- endif -%}
+    {%- if config.extra.social.stackoverflow -%}
+    <li>
+      <a href="https://stackoverflow.com/users/{{ config.extra.social.stackoverflow }}">
+        <i class="fab fa-stack-overflow"></i>
+      </a>
+    </li>
+    {%- endif -%}
     {%- if config.extra.social.twitter -%}
     <li><a href="https://twitter.com/{{ config.extra.social.twitter }}"><i class="fab fa-twitter"></i></a></li>
     {%- endif -%}
