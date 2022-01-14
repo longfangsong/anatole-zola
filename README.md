@@ -38,7 +38,7 @@ base_url = "https://example.com"
 
 ### Language
 
-Currently, we have English and Chinese translation, set the `default_language` if necessary:
+Currently, we have English, Chinese and German translation, set the `default_language` if necessary:
 
 ```toml
 # 如果你想要中文
@@ -65,6 +65,16 @@ archive = "归档"
 links = "友链"
 next_page = "下一页"
 last_page = "上一页"
+
+[languages.de.translations]
+about = "Info"
+home = "Home"
+tags = "Kategorien"
+archive = "Archiv"
+links = "Links"
+date_format = "%d-%m-%Y"
+next_page = "Nächste Seite"
+last_page = "Vorherige Seite"
 ```
 
 Feel free to create a pull request if you want to translate the promotes into other languages!
