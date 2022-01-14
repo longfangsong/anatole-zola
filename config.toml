@@ -33,6 +33,16 @@ date_format = "%Y-%m-%d"
 next_page = "下一页"
 last_page = "上一页"
 
+[languages.de.translations]
+about = "Info"
+home = "Home"
+tags = "Kategorien"
+archive = "Archiv"
+links = "Links"
+date_format = "%d-%m-%Y"
+next_page = "Nächste Seite"
+last_page = "Vorherige Seite"
+
 [extra.social]
 github = ""
 twitter = "w"
