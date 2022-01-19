@@ -4,7 +4,7 @@ base_url = "https://example.com"
 compile_sass = true
 highlight_code = true
 build_search_index = false
-generate_rss = true
+generate_feed = true
 highlight_theme = "base16-ocean-light"
 
 default_language = "en"
