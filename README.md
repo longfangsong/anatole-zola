@@ -8,6 +8,10 @@ ___
 
 ![screenshot-mobile](./screenshot-mobile.png)
 
+![screenshot-dark](./screenshot-dark.png)
+
+![screenshot-mobile-dark](./screenshot-mobile-dark.png)
+
 ## Installation
 
 First download this theme to your `themes` directory:
