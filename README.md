@@ -36,6 +36,15 @@ description = "A other zola theme"
 base_url = "https://example.com"
 ```
 
+### Mode
+
+Though the origin theme only support light mode, we added a dark mode option here.
+
+You can either 
+- set the `extra.mode` field in `config.toml` to use the dark/light mode
+- or set the `extra.default_mode` field in `config.toml` to read the dark/light mode from `localStorage` (the key is `'mode'`), and use some Javascript to control the theme each reader is using
+- or do nothing, we'll use light mode by default
+
 ### Language
 
 Currently, we have English, Chinese and German translations, set the `default_language` if necessary:

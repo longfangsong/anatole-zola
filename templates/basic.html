@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" 
+  {% if config.extra.mode %}
+    class="theme--{{config.extra.mode}}"
+  {% else %} 
+    class="theme--light" 
+  {% endif %}
+>
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -100,5 +106,22 @@
     </div>
   </div>
 </div>
+{% if config.extra.mode %}
+{% elif config.extra.default_mode %}
+<script>
+  window.onload = function () {
+    const currentTheme = localStorage.getItem('theme');
+    const element = document.getElementsByTagName("html")[0];
+    if (currentTheme) {
+      element.classList.remove('theme--light');
+      element.classList.add('theme--'+currentTheme);
+    } else {
+      localStorage.setItem('theme', '{{config.extra.default_mode}}');
+      element.classList.remove('theme--light');
+      element.classList.add('theme--{{config.extra.default_mode}}');
+    }
+  }
+</script>
+{% endif %}
 </body>
 </html>
