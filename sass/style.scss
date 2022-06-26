@@ -862,6 +862,22 @@ html.theme--light {
       blockquote {
         border-left: #4a4a4a 0.2em solid;
       }
+
+      & code {
+        border: 1px solid #E3EDF3;
+        background: #f7f7f9;
+        color: rgb(255, 58, 107);
+      }
+
+      & pre code {
+        padding: 0;
+        font-size: inherit;
+        white-space: inherit;
+        border: 0;
+        background: inherit;
+        color: inherit;
+        border-radius: 0;
+      }
     }
 
     .post-footer {
@@ -1126,6 +1142,16 @@ html.theme--dark {
       & code {
         background: #2b303b;
         color: rgb(255, 58, 107);
+      }
+
+      & pre code {
+        padding: 0;
+        font-size: inherit;
+        white-space: inherit;
+        border: 0;
+        background: inherit;
+        color: inherit;
+        border-radius: 0;
       }
 
       blockquote {
