@@ -1,127 +1,165 @@
 <!DOCTYPE html>
-<html lang="en" 
-  {% if config.extra.mode %}
-    class="theme--{{config.extra.mode}}"
-  {% else %} 
-    class="theme--light" 
-  {% endif %}
->
+<html lang="en" {% if config.extra.mode %} class="theme--{{config.extra.mode}}" {% else %} class="theme--light" {% endif
+  %}>
+
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ get_url(path="images/apple-touch-icon-144x144.png", trailing_slash=false) }}"/>
-  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ get_url(path="images/apple-touch-icon-120x120.png", trailing_slash=false) }}"/>
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ get_url(path="images/apple-touch-icon-72x72.png", trailing_slash=false) }}"/>
-  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ get_url(path="images/apple-touch-icon-57x57.png", trailing_slash=false) }}"/>
-  <link rel="short icon" href="{{ get_url(path="images/favicon.png") }}" type="image/x-icon"/>
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ get_url(path="images/apple-touch-icon-144x144.png",
+    trailing_slash=false) }}" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ get_url(path="images/apple-touch-icon-120x120.png",
+    trailing_slash=false) }}" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ get_url(path="images/apple-touch-icon-72x72.png",
+    trailing_slash=false) }}" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ get_url(path="images/apple-touch-icon-57x57.png",
+    trailing_slash=false) }}" />
+  <link rel="short icon" href="{{ get_url(path="images/favicon.png") }}" type="image/x-icon" />
   <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
   <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
   <title>{% block title %}{{ config.title }}{% endblock title %}</title>
   {% if config.generate_feed %}
-    {% block rss %}
-      <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
-    {% endblock rss %}
+  {% block rss %}
+  <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="{{ get_url(path="rss.xml",
+    trailing_slash=false, lang=lang) }}">
+  {% endblock rss %}
   {% endif %}
-
   {% block extra_head %}
   {% endblock extra_head %}
 </head>
+
 <body>
-<div id="sidebar" class="animated fadeInDown">
-  <div class="logo-title">
-    <div class="title">
-      <img src={{ get_url(path="images/logo@2x.png" ) }} style="width:127px;" alt="logo"/>
-      <h3><a href="{{ get_url(path="@/_index.md") }}">{{ config.title }}</a></h3>
-      <div class="description">
-        <p>{{ config.description }}</p>
+  <div id="sidebar" class="animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src={{ get_url(path="images/logo@2x.png" ) }} style="width:127px;" alt="logo" />
+        <h3><a href="{{ get_url(path="@/_index.md", lang=lang) }}">{{ config.title }}</a></h3>
+        <div class="description">
+          <p>{{ config.description }}</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+      {%- if config.extra.social.github -%}
+      <li><a href="https://github.com/{{ config.extra.social.github }}"><i class="fab fa-github"></i></a></li>
+      {%- endif -%}
+      {%- if config.extra.social.stackoverflow -%}
+      <li>
+        <a href="https://stackoverflow.com/users/{{ config.extra.social.stackoverflow }}">
+          <i class="fab fa-stack-overflow"></i>
+        </a>
+      </li>
+      {%- endif -%}
+      {%- if config.extra.social.twitter -%}
+      <li><a href="https://twitter.com/{{ config.extra.social.twitter }}"><i class="fab fa-twitter"></i></a></li>
+      {%- endif -%}
+      {% if config.extra.social.facebook -%}
+      <li><a href="https://www.facebook.com/{{ config.extra.social.facebook }}"><i class="fab fa-facebook"></i></a></li>
+      {%- endif -%}
+      {%- if config.extra.social.instagram -%}
+      <li><a href="https://www.instagram.com/{{ config.extra.social.instagram }}"><i class="fab fa-instagram"></i></a>
+      </li>
+      {%- endif -%}
+      {%- if config.extra.social.dribbble -%}
+      <li><a href="https://dribbble.com/{{ config.extra.social.dribbble }}"><i class="fab fa-dribbble"></i></a></li>
+      {%- endif -%}
+      {%- if config.extra.social.weibo -%}
+      <li><a href="https://weibo.com/{{ config.extra.social.weibo }}"><i class="fab fa-weibo"></i></a></li>
+      {%- endif -%}
+      {%- if config.extra.social.linkedin -%}
+      <li><a href="https://linkedin.com/in/{{ config.extra.social.linkedin }}"><i class="fab fa-linkedin"></i></a></li>
+      {%- endif -%}
+      {%- if config.extra.social.flickr -%}
+      <li><a href="https://www.flickr.com/photos/{{ config.extra.social.flickr }}"><i class="fab fa-flickr"></i></a>
+      </li>
+      {%- endif -%}
+      {% block more_social_link %}
+      {% endblock more_social_link %}
+    </ul>
+    <div class="footer">
+      {% block footer %}
+      <span>Designed by </span><a href="https://www.caicai.me">CaiCai</a>
+      <div class="by_zola"><a href="https://www.getzola.org/" target="_blank">Proudly published with Zola!</a></div>
+      {% endblock footer %}
+    </div>
+  </div>
+  <div id="main">
+    <div class="page-top animated fadeInDown">
+      <div class="nav">
+        {% set current_url_str = current_url | as_str %}
+        {% set language_site_base = get_url(path="@/_index.md", lang=lang) | as_str %}
+        {% set language_site_path_without_prefix = current_url | trim_start_matches(pat=language_site_base) |
+        trim_end_matches(pat="/") %}
+        {% set language_site_path = '/' ~ language_site_path_without_prefix %}
+        <li><a {% if language_site_path=="/" or language_site_path is starting_with("/page/") %}class="current" {% endif
+            %} href="{{ get_url(path="@/_index.md", lang=lang) }}">{{ trans(key="home", lang=lang) }}</a></li>
+        <li><a {% if language_site_path is starting_with("/about") %}class="current" {% endif %} href="{{ get_url(path="@/about/_index.md", lang=lang) }}">{{ trans(key="about", lang=lang) }}</a></li>
+        {%- if config.extra.show.tags -%}
+        <li><a {% if language_site_path is starting_with("/tags") %}class="current" {% endif %} href="{{ get_url(path="@/_index.md", lang=lang) }}tags">{{ trans(key="tags", lang=lang) }}</a></li>
+        {%- endif -%}
+        <li><a {% if language_site_path is starting_with("/archive") %}class="current" {% endif %}
+            href="{{ get_url(path="@/archive/_index.md", lang=lang) }}">{{ trans(key="archive", lang=lang) }}</a></li>
+        {%- if config.extra.show.links -%}
+        <li><a {% if language_site_path is starting_with("/links") %}class="current" {% endif %} href="{{ get_url(path="@/links/_index.md", lang=lang) }}">{{ trans(key="links", lang=lang) }}</a></li>
+        {%- endif -%}
+      </div>
+      <div class="information">
+        <div class="back_btn">
+          <a onclick="window.history.go(-1)" {% if language_site_path=="/" %}style="display:none;" {% endif %}><i
+              class="fas fa-chevron-left"></i></a>
+        </div>
+        {% set language_count = 1 %}
+        {% for language_name, language in config.languages %}
+          {% set_global language_count = language_count + 1 %}
+        {% endfor %}
+        {% if language_count > 1 %}
+        <div id="language-switch">
+          <button onclick="showLanguages()"><i class="fas fa-globe"></i></button>
+          <div id="languages" style="display: none">
+            {% for language_name, language in config.languages %}
+            <a onclick="window.location.href='{{ get_url(path="@/about/_index.md", lang=language_name) |
+              trim_end_matches(pat='about/' )}}'"> {{ trans(key="language_name", lang=language_name) }} </a>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+        <div class="avatar"><img src="{{ get_url(path="images/avatar.jpg") }}"></div>
+      </div>
+    </div>
+    <div class="autopagerize_page_element">
+      <div class="content">
+        {% block content %}
+        {% endblock content %}
       </div>
     </div>
   </div>
-  <ul class="social-links">
-    {%- if config.extra.social.github -%}
-    <li><a href="https://github.com/{{ config.extra.social.github }}"><i class="fab fa-github"></i></a></li>
-    {%- endif -%}
-    {%- if config.extra.social.stackoverflow -%}
-    <li>
-      <a href="https://stackoverflow.com/users/{{ config.extra.social.stackoverflow }}">
-        <i class="fab fa-stack-overflow"></i>
-      </a>
-    </li>
-    {%- endif -%}
-    {%- if config.extra.social.twitter -%}
-    <li><a href="https://twitter.com/{{ config.extra.social.twitter }}"><i class="fab fa-twitter"></i></a></li>
-    {%- endif -%}
-    {% if config.extra.social.facebook -%}
-    <li><a href="https://www.facebook.com/{{ config.extra.social.facebook }}"><i class="fab fa-facebook"></i></a></li>
-    {%- endif -%}
-    {%- if config.extra.social.instagram -%}
-    <li><a href="https://www.instagram.com/{{ config.extra.social.instagram }}"><i class="fab fa-instagram"></i></a></li>
-    {%- endif -%}
-    {%- if config.extra.social.dribbble -%}
-    <li><a href="https://dribbble.com/{{ config.extra.social.dribbble }}"><i class="fab fa-dribbble"></i></a></li>
-    {%- endif -%}
-    {%- if config.extra.social.weibo -%}
-    <li><a href="https://weibo.com/{{ config.extra.social.weibo }}"><i class="fab fa-weibo"></i></a></li>
-    {%- endif -%}
-    {%- if config.extra.social.linkedin -%}
-    <li><a href="https://linkedin.com/in/{{ config.extra.social.linkedin }}"><i class="fab fa-linkedin"></i></a></li>
-    {%- endif -%}
-    {%- if config.extra.social.flickr -%}
-    <li><a href="https://www.flickr.com/photos/{{ config.extra.social.flickr }}"><i class="fab fa-flickr"></i></a></li>
-    {%- endif -%}
-    {% block more_social_link %}
-    {% endblock more_social_link %}
-  </ul>
-  <div class="footer">
-    {% block footer %}
-    <span>Designed by </span><a href="https://www.caicai.me">CaiCai</a>
-    <div class="by_zola"><a href="https://www.getzola.org/" target="_blank">Proudly published with Zola!</a></div>
-    {% endblock footer %}
-  </div>
-</div>
-<div id="main">
-  <div class="page-top animated fadeInDown">
-    <div class="nav">
-      <li><a {% if current_path == "/" or current_path is starting_with("/page/") %}class="current"{% endif %} href="{{ get_url(path="@/_index.md") }}">{{ trans(key="home") }}</a></li><li><a {% if current_path is starting_with("/about") %}class="current"{% endif %} href="{{ get_url(path="@/about/_index.md") }}">{{ trans(key="about") }}</a></li>
-      {%- if config.extra.show.tags -%}
-      <li><a {% if current_path is starting_with("/tags") %}class="current"{% endif %} href="{{ get_url(path="@/_index.md") }}tags">{{ trans(key="tags") }}</a></li>
-      {%- endif -%}
-      <li><a {% if current_path is starting_with("/archive") %}class="current"{% endif %} href="{{ get_url(path="@/archive/_index.md") }}">{{ trans(key="archive") }}</a></li>
-      {%- if config.extra.show.links -%}
-      <li><a {% if current_path is starting_with("/links") %}class="current"{% endif %} href="{{ get_url(path="@/links/_index.md") }}">{{ trans(key="links") }}</a></li>
-      {%- endif -%}
-    </div>
-    <div class="information">
-      <div class="back_btn">
-        <li><a onclick="window.history.go(-1)" {% if current_path == "/" %}style="display:none;"{% endif %}><i class="fas fa-chevron-left"></i></a></li>
-      </div>
-      <div class="avatar"><img src="{{ get_url(path="images/avatar.jpg") }}"></div>
-    </div>
-  </div>
-  <div class="autopagerize_page_element">
-    <div class="content">
-    {% block content %}
-    {% endblock content %}
-    </div>
-  </div>
-</div>
-{% if config.extra.mode %}
-{% elif config.extra.default_mode %}
-<script>
-  window.onload = function () {
-    const currentTheme = localStorage.getItem('theme');
-    const element = document.getElementsByTagName("html")[0];
-    if (currentTheme) {
-      element.classList.remove('theme--light');
-      element.classList.add('theme--'+currentTheme);
-    } else {
-      localStorage.setItem('theme', '{{config.extra.default_mode}}');
-      element.classList.remove('theme--light');
-      element.classList.add('theme--{{config.extra.default_mode}}');
+  {% if config.extra.mode %}
+  {% elif config.extra.default_mode %}
+  <script>
+    window.onload = function () {
+      const currentTheme = localStorage.getItem('theme');
+      const element = document.getElementsByTagName("html")[0];
+      if (currentTheme) {
+        element.classList.remove('theme--light');
+        element.classList.add('theme--' + currentTheme);
+      } else {
+        localStorage.setItem('theme', '{{config.extra.default_mode}}');
+        element.classList.remove('theme--light');
+        element.classList.add('theme--{{config.extra.default_mode}}');
+      }
     }
-  }
-</script>
-{% endif %}
+  </script>
+  {% endif %}
+  <script>
+    function showLanguages() {
+      let currentDisplay = document.getElementById("languages").style.display;
+      if (currentDisplay == 'none') {
+        document.getElementById("languages").style.display = 'block';
+      } else {
+        document.getElementById("languages").style.display = 'none';
+      }
+    }
+  </script>
 </body>
+
 </html>

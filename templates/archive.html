@@ -2,23 +2,31 @@
 
 {% block content %}
 <div class="archive animated fadeInDown">
-    <ul class="list-with-title">
-        {% set section_item = get_section(path="_index.md") %}
-        {% for year, posts in section_item.pages | group_by(attribute="year") %}
-            <div class="listing-title">{{ year }}</div>
-            <ul class="listing">
-                {% for post in posts %}
-                <div class="listing-item">
-                  <div class="listing-post">
-                    <a href="{{ post.permalink }}" title="{{ post.title }}">{{ post.title }}</a>
-                    <div class="post-time">
-                      <span class="date">{{ post.date | date(format=trans(key="date_format")) }}</span>
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-            </ul>
-        {% endfor %}
-    </ul>
+  <ul class="list-with-title">
+    {% if lang == config.default_language %}
+      {% set section_item = get_section(path="_index.md") %}
+    {% else %}
+      {% set path = "_index." ~ lang ~ ".md"%}
+      {% set section_item = get_section(path=path) %}
+    {% endif %}
+    {% for year, posts in section_item.pages | group_by(attribute="year") %}
+      {% set language_posts = posts | filter(attribute="lang", value=lang) %}
+      {% if language_posts | length > 0 %}
+        <div class="listing-title">{{ year }}</div>
+        <ul class="listing">
+          {% for post in language_posts %}
+          <div class="listing-item">
+            <div class="listing-post">
+              <a href="{{ post.permalink }}" title="{{ post.title }}">{{ post.title }}</a>
+              <div class="post-time">
+                <span class="date">{{ post.date | date(format=trans(key="date_format", lang=lang)) }}</span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endfor %}
+  </ul>
 </div>
 {% endblock content %}

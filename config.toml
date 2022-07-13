@@ -6,14 +6,30 @@ highlight_code = true
 build_search_index = false
 generate_feed = true
 highlight_theme = "base16-ocean-light"
-
 default_language = "en"
 
 taxonomies = [
     {name = "tags"},
 ]
 
+[languages.en]
+title = "Anatole"
+description = "A other zola theme"
+generate_feed = true
+taxonomies = [
+    {name = "tags"},
+]
+
+[languages.zh]
+title = "Anatole"
+description = "A other zola theme"
+generate_feed = true
+taxonomies = [
+    {name = "tags"},
+]
+
 [languages.en.translations]
+language_name = "English"
 about = "About"
 home = "Home"
 tags = "Tags"
@@ -24,6 +40,7 @@ next_page = "Next Page"
 last_page = "Last Page"
 
 [languages.zh.translations]
+language_name = "中文"
 home = "首页"
 about = "关于"
 tags = "标签"
@@ -34,6 +51,7 @@ next_page = "下一页"
 last_page = "上一页"
 
 [languages.de.translations]
+language_name = "Deutsch"
 about = "Info"
 home = "Home"
 tags = "Kategorien"
@@ -42,6 +60,17 @@ links = "Links"
 date_format = "%d-%m-%Y"
 next_page = "Nächste Seite"
 last_page = "Vorherige Seite"
+
+[languages.sv.translations]
+language_name = "Svenska"
+about = "Info"
+home = "Hem"
+tags = "Etiketter"
+archive = "Arkiv"
+links = "Länkar"
+date_format = "%Y-%m-%d"
+next_page = "Nästa Sidan"
+last_page = "Sista Sidan"
 
 [extra.social]
 github = ""

@@ -11,7 +11,7 @@
                 <div class="listing-post">
                     <a href="{{ post.permalink }}" title="{{ post.title }}">{{ post.title }}</a>
                     <div class="post-time">
-                        <span class="date">{{ post.date | date(format=trans(key="date_format")) }}</span>
+                        <span class="date">{{ post.date | date(format=trans(key="date_format", lang=lang)) }}</span>
                     </div>
                 </div>
             </div>

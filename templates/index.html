@@ -21,7 +21,7 @@
                   {% if page.date %}
                     <i class="far fa-sun"></i>
                     <span class="date">
-                      {{ page.date | date(format=trans(key="date_format")) }}
+                      {{ page.date | date(format=trans(key="date_format", lang=lang)) }}
                     </span>
                   {% endif %}
                   {% if config.extra.comment %}
@@ -44,14 +44,14 @@
         {% if paginator.next %}
           <li class="next pagbuttons">
             <a class="btn" role="navigation" href="{{ paginator.next }}">
-              {{ trans(key="next_page") }}
+              {{ trans(key="next_page", lang=lang) }}
             </a>
           </li>
         {% endif %}
         {% if paginator.previous %}
           <li class="pre pagbuttons">
             <a class="btn" role="navigation" href="{{ paginator.previous }}">
-              {{ trans(key="last_page") }}
+              {{ trans(key="last_page", lang=lang) }}
             </a>
           </li>
         {% endif %}

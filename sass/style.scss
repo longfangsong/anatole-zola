@@ -133,7 +133,10 @@ img {
 
   .nav {
     list-style: none;
-    padding: 18px 30px;
+    padding: 18px 12px;
+    @media screen and (min-width: 450px) {
+      padding: 18px 30px;
+    }
     float: left;
     font-size: 12px;
 
@@ -151,9 +154,16 @@ img {
   .information {
     float: right;
     padding-top: 12px;
-    padding-right: 20px;
+    padding-right: 4px;
+    @media screen and (min-width: 450px) {
+      padding-right: 20px;
+    }
 
     .avatar {
+      display: none;
+      @media screen and (min-width: 450px) {
+        display: block;
+      }
       float: right;
 
       img {
@@ -163,14 +173,57 @@ img {
       }
     }
 
+    #language-switch {
+      position: relative;
+      display: block;
+      float: left;
+
+      button {
+        font-size: 1.3em;
+        border: none;
+        cursor: pointer;
+        height: 61px;
+        width: 50px;
+        margin: -12px 5px 0 0;
+        @media screen and (min-width: 450px) {
+          width: 70px;
+          margin: -12px 10px 0 0;
+        }
+        background-color: inherit;
+      }
+
+      #languages {
+        position: absolute;
+        min-width: 100%;
+        overflow: auto;
+        z-index: 1;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+
+        a {
+          display: block;
+          padding: 5px 16px;
+          text-align: center;
+          cursor: pointer;
+        }
+      }
+    }
+
     .back_btn {
       float: left;
-      padding-top: 5px;
+      padding-top: 7px;
       margin-right: -10px;
+      cursor: pointer;
 
-      li {
+      a {
         display: initial;
-        padding-right: 40px;
+        padding-right: 10px;
+        @media screen and (min-width: 350px) and (max-width: 450px) {
+          padding-right: 20px;
+        }
+        @media screen and (min-width: 450px) {
+          padding-right: 40px;
+        }
       }
     }
   }
@@ -795,6 +848,25 @@ html.theme--light {
         border-bottom: 1px solid #5A5A5A;
       }
     }
+
+    .information #language-switch {
+      button {
+        color: black;
+
+        &:hover {
+          background-color: #f5f5f5;
+        }
+      }
+
+      #languages {
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+        a:hover {
+          background-color: #f5f5f5;
+        }
+      }
+    }
+
   }
 
   #sidebar {
@@ -1074,6 +1146,24 @@ html.theme--dark {
       a.current {
         color: #eeeeee;
         border-bottom: 1px solid #eeeeee;
+      }
+    }
+
+    .information #language-switch {
+      button {
+        color: #f5f5f5;
+
+        &:hover {
+          background-color: #5A5A5A;
+        }
+      }
+
+      #languages {
+        box-shadow: 0px 8px 16px 0px rgba(95, 95, 95, 0.2);
+
+        a:hover {
+          background-color: #5A5A5A;
+        }
       }
     }
   }
