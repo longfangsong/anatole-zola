@@ -41,36 +41,36 @@
     </div>
     <ul class="social-links">
       {%- if config.extra.social.github -%}
-      <li><a href="https://github.com/{{ config.extra.social.github }}"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://github.com/{{ config.extra.social.github }}" aria-label="Go to Github profile page"><i class="fab fa-github"></i></a></li>
       {%- endif -%}
       {%- if config.extra.social.stackoverflow -%}
       <li>
-        <a href="https://stackoverflow.com/users/{{ config.extra.social.stackoverflow }}">
+        <a href="https://stackoverflow.com/users/{{ config.extra.social.stackoverflow }}" aria-label="Go to StackOverflow profile page">
           <i class="fab fa-stack-overflow"></i>
         </a>
       </li>
       {%- endif -%}
       {%- if config.extra.social.twitter -%}
-      <li><a href="https://twitter.com/{{ config.extra.social.twitter }}"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="https://twitter.com/{{ config.extra.social.twitter }}" aria-label="Go to Twitter profile page"><i class="fab fa-twitter"></i></a></li>
       {%- endif -%}
       {% if config.extra.social.facebook -%}
-      <li><a href="https://www.facebook.com/{{ config.extra.social.facebook }}"><i class="fab fa-facebook"></i></a></li>
+      <li><a href="https://www.facebook.com/{{ config.extra.social.facebook }}" aria-label="Go to FaceBook profile page"><i class="fab fa-facebook"></i></a></li>
       {%- endif -%}
       {%- if config.extra.social.instagram -%}
-      <li><a href="https://www.instagram.com/{{ config.extra.social.instagram }}"><i class="fab fa-instagram"></i></a>
+      <li><a href="https://www.instagram.com/{{ config.extra.social.instagram }}" aria-label="Go to Instagram profile page"><i class="fab fa-instagram"></i></a>
       </li>
       {%- endif -%}
       {%- if config.extra.social.dribbble -%}
-      <li><a href="https://dribbble.com/{{ config.extra.social.dribbble }}"><i class="fab fa-dribbble"></i></a></li>
+      <li><a href="https://dribbble.com/{{ config.extra.social.dribbble }}" aria-label="Go to Dribbble profile page"><i class="fab fa-dribbble"></i></a></li>
       {%- endif -%}
       {%- if config.extra.social.weibo -%}
-      <li><a href="https://weibo.com/{{ config.extra.social.weibo }}"><i class="fab fa-weibo"></i></a></li>
+      <li><a href="https://weibo.com/{{ config.extra.social.weibo }}" aria-label="Go to weibo profile page"><i class="fab fa-weibo"></i></a></li>
       {%- endif -%}
       {%- if config.extra.social.linkedin -%}
-      <li><a href="https://linkedin.com/in/{{ config.extra.social.linkedin }}"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="https://linkedin.com/in/{{ config.extra.social.linkedin }}" aria-label="Go to Linkedin profile page"><i class="fab fa-linkedin"></i></a></li>
       {%- endif -%}
       {%- if config.extra.social.flickr -%}
-      <li><a href="https://www.flickr.com/photos/{{ config.extra.social.flickr }}"><i class="fab fa-flickr"></i></a>
+      <li><a href="https://www.flickr.com/photos/{{ config.extra.social.flickr }}" aria-label="Go to Flickr profile page"><i class="fab fa-flickr"></i></a>
       </li>
       {%- endif -%}
       {% block more_social_link %}
@@ -114,7 +114,7 @@
         {% endfor %}
         {% if language_count > 1 %}
         <div id="language-switch">
-          <button onclick="showLanguages()"><i class="fas fa-globe"></i></button>
+          <button onclick="showLanguages()" aria-label="show languages"><i class="fas fa-globe"></i></button>
           <div id="languages" style="display: none">
             {% for language_name, language in config.languages %}
             <a onclick="window.location.href='{{ get_url(path="@/about/_index.md", lang=language_name) |

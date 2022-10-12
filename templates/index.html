@@ -43,14 +43,14 @@
 		  <ul class="clearfix">
         {% if paginator.next %}
           <li class="next pagbuttons">
-            <a class="btn" role="navigation" href="{{ paginator.next }}">
+            <a class="btn" role="navigation" href="{{ paginator.next }}" aria-label="{{ trans(key="next_page", lang=lang) }}">
               {{ trans(key="next_page", lang=lang) }}
             </a>
           </li>
         {% endif %}
         {% if paginator.previous %}
           <li class="pre pagbuttons">
-            <a class="btn" role="navigation" href="{{ paginator.previous }}">
+            <a class="btn" role="navigation" href="{{ paginator.previous }}" aria-label="{{ trans(key="last_page", lang=lang) }}">
               {{ trans(key="last_page", lang=lang) }}
             </a>
           </li>
