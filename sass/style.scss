@@ -895,6 +895,8 @@ html.theme--light {
       #languages {
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
+        background-color: white;
+
         a:hover {
           background-color: #f5f5f5;
         }
@@ -1194,7 +1196,7 @@ html.theme--dark {
 
       #languages {
         box-shadow: 0px 8px 16px 0px rgba(95, 95, 95, 0.2);
-
+        background-color: #152028;
         a:hover {
           background-color: #5A5A5A;
         }
