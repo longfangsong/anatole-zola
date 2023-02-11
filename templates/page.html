@@ -13,13 +13,14 @@
     <div class="meta">
       <div class="info">
         {% if page.date %}
-          <i class="far fa-sun"></i><span class="date">{{ page.date | date(format=trans(key="date_format", lang=lang)) }}</span>
+        <i class="far fa-sun"></i><span class="date">{{ page.date | date(format=trans(key="date_format", lang=lang))
+          }}</span>
         {% endif %}
         {% if page.taxonomies.tags %}
-          <i class="fas fa-tags"></i>
-          {% for tag in page.taxonomies.tags %}
-            <a class="tag" href="{{ get_url(path="@/_index.md", lang=lang) }}tags/{{tag}}">&nbsp;{{tag}}</a>
-          {% endfor %}
+        <i class="fas fa-tags"></i>
+        {% for tag in page.taxonomies.tags %}
+        <a class="tag" href="{{ get_url(path=" @/_index.md", lang=lang) }}tags/{{tag}}">&nbsp;{{tag}}</a>
+        {% endfor %}
         {% endif %}
       </div>
     </div>
@@ -27,10 +28,13 @@
 </article>
 <div class="share">
   <div class="weibo">
-    <a class="fab fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
+    <a class="fab fa-weibo"
+      href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&title=',e(d.title),'&appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
   </div>
   <div class="twitter">
-    <a class="fab fa-twitter" href="http://twitter.com/share?text={{ page.title }}&url={{ page.permalink | trim_end_matches(pat="/") }}{% if page.taxonomies.tags %}&hashtags={{ page.taxonomies.tags | join(sep=",") }}{% endif %}"></a>
+    <a class="fab fa-twitter"
+      href="http://twitter.com/share?text={{ page.title }}&url={{ page.permalink | trim_end_matches(pat=" /") }}{% if
+      page.taxonomies.tags %}&hashtags={{ page.taxonomies.tags | join(sep="," ) }}{% endif %}"></a>
   </div>
 </div>
 {% include "comments.html" %}
@@ -46,10 +50,19 @@
 </script>
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/{{ page.extra.mathjax }}-chtml.js">
-</script>
+  </script>
+{% endif %}
+{% if page.extra.tikzjax %}
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<style>
+  .tikz>svg {
+    overflow: visible;
+  }
+</style>
+<script src="{{ get_url(path="js/tikzjax.js", trailing_slash=false) }}"></script>
 {% endif %}
 {% if page.extra.mermaid %}
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+<script>mermaid.initialize({ startOnLoad: true });</script>
 {% endif %}
 {% endblock content %}
