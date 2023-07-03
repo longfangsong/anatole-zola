@@ -154,6 +154,7 @@ We support a bunch of social links:
 github = ""
 stackoverflow = "" # use user_id
 twitter = ""
+mastodon = "" # use hostname/@username
 facebook = ""
 instagram = ""
 dribbble = ""
