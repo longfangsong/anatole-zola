@@ -43,6 +43,9 @@
       {%- if config.extra.social.github -%}
       <li><a href="https://github.com/{{ config.extra.social.github }}" aria-label="Go to Github profile page"><i class="fab fa-github"></i></a></li>
       {%- endif -%}
+      {%- if config.extra.social.gitlab -%}
+      <li><a href="https://gitlab.com/{{ config.extra.social.gitlab }}" aria-label="Go to Gitlab profile page"><i class="fab fa-gitlab"></i></a></li>
+      {%- endif -%}
       {%- if config.extra.social.stackoverflow -%}
       <li>
         <a href="https://stackoverflow.com/users/{{ config.extra.social.stackoverflow }}" aria-label="Go to StackOverflow profile page">
