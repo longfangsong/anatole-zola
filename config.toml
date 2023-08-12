@@ -72,6 +72,17 @@ date_format = "%Y-%m-%d"
 next_page = "Nästa Sidan"
 last_page = "Sista Sidan"
 
+[languages.ja.translations]
+language_name = "日本語"
+about = "About"
+home = "Home"
+tags = "タグ"
+archive = "アーカイブ"
+links = "リンク"
+date_format = "%Y-%m-%d"
+next_page = "次頁"
+last_page = "前頁"
+
 [extra.social]
 github = ""
 twitter = "w"
