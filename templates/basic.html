@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
   <title>{% block title %}{{ config.title }}{% endblock title %}</title>
-  {% if config.generate_feed %}
+  {% if config.generate_feeds %}
   {% block rss %}
   <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="{{ get_url(path="rss.xml",
     trailing_slash=false, lang=lang) }}">
@@ -60,7 +60,7 @@
       <li><a rel="me" href="https://{{ config.extra.social.mastodon }}"
                       aria-label="Go to Mastodon profile page"><i class="fab fa-mastodon"></i></a>
       </li>
-      {%- endif -%}    
+      {%- endif -%}
       {% if config.extra.social.facebook -%}
       <li><a href="https://www.facebook.com/{{ config.extra.social.facebook }}" aria-label="Go to FaceBook profile page"><i class="fab fa-facebook"></i></a></li>
       {%- endif -%}
