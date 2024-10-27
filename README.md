@@ -44,7 +44,7 @@ base_url = "https://example.com"
 
 Though the origin theme only support light mode, we added a dark mode option here.
 
-You can either 
+You can either
 - set the `extra.mode` field in `config.toml` to use the dark/light mode
 - or set the `extra.default_mode` field in `config.toml` to read the dark/light mode from `localStorage` (the key is `'mode'`), and use some Javascript to control the theme each reader is using
 - or do nothing, we'll use light mode by default
@@ -170,7 +170,7 @@ Fill in your username if you want! And the logo won't appear if you leave it emp
 
 ### Comment system
 
-We currently support... 
+We currently support...
 
 - [Valine](https://valine.js.org/quickstart.html):
 
