@@ -1,16 +1,11 @@
-title = "Anatole"
-description = "A other zola theme"
 base_url = "https://example.com"
 compile_sass = true
-highlight_code = true
 build_search_index = false
-generate_feeds = true
-highlight_theme = "base16-ocean-light"
 default_language = "en"
 
-taxonomies = [
-    {name = "tags"},
-]
+[markdown]
+highlight_code = true
+highlight_theme = "base16-ocean-dark"
 
 [languages.en]
 title = "Anatole"
@@ -35,7 +30,7 @@ home = "Home"
 tags = "Tags"
 archive = "Archive"
 links = "Links"
-# date_format = "%Y-%m-%d"
+date_format = "%Y-%m-%d"
 next_page = "Next Page"
 last_page = "Last Page"
 
@@ -46,7 +41,7 @@ about = "关于"
 tags = "标签"
 archive = "归档"
 links = "友链"
-# date_format = "%Y-%m-%d"
+date_format = "%Y-%m-%d"
 next_page = "下一页"
 last_page = "上一页"
 
@@ -57,7 +52,7 @@ home = "Home"
 tags = "Kategorien"
 archive = "Archiv"
 links = "Links"
-# date_format = "%d-%m-%Y"
+date_format = "%d-%m-%Y"
 next_page = "Nächste Seite"
 last_page = "Vorherige Seite"
 
@@ -68,7 +63,7 @@ home = "Hem"
 tags = "Etiketter"
 archive = "Arkiv"
 links = "Länkar"
-# date_format = "%Y-%m-%d"
+date_format = "%Y-%m-%d"
 next_page = "Nästa Sidan"
 last_page = "Sista Sidan"
 
@@ -79,7 +74,7 @@ home = "Home"
 tags = "タグ"
 archive = "アーカイブ"
 links = "リンク"
-# date_format = "%Y-%m-%d"
+date_format = "%Y-%m-%d"
 next_page = "次頁"
 last_page = "前頁"
 
