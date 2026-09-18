@@ -33,7 +33,7 @@
   </div>
   <div class="twitter">
     <a class="fab fa-twitter"
-      href="http://twitter.com/share?text={{ page.title }}&url={{ page.permalink | trim_end_matches(pat=" /") }}{% if
+      href="http://twitter.com/share?text={{ page.title }}&url={{ page.permalink | trim_end(pat=" /") }}{% if
       page.taxonomies.tags %}&hashtags={{ page.taxonomies.tags | join(sep="," ) }}{% endif %}"></a>
   </div>
 </div>

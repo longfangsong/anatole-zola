@@ -94,21 +94,20 @@
   <div id="main">
     <div class="page-top animated fadeInDown">
       <div class="nav">
-        {% set current_url_str = current_url | as_str %}
-        {% set language_site_base = get_url(path="@/_index.md", lang=lang) | as_str %}
-        {% set language_site_path_without_prefix = current_url | trim_start_matches(pat=language_site_base) |
-        trim_end_matches(pat="/") %}
+        {% set current_url_str = current_url | str %}
+        {% set language_site_base = get_url(path="@/_index.md", lang=lang) | str %}
+        {% set language_site_path_without_prefix = current_url | trim_start(pat=language_site_base) | trim_end(pat="/") %}
         {% set language_site_path = '/' ~ language_site_path_without_prefix %}
-        <li><a {% if language_site_path=="/" or language_site_path is starting_with("/page/") %}class="current" {% endif
+        <li><a {% if language_site_path=="/" or language_site_path is starting_with(pat="/page/") %}class="current" {% endif
             %} href="{{ get_url(path="@/_index.md", lang=lang) }}">{{ trans(key="home", lang=lang) }}</a></li>
-        <li><a {% if language_site_path is starting_with("/about") %}class="current" {% endif %} href="{{ get_url(path="@/about/_index.md", lang=lang) }}">{{ trans(key="about", lang=lang) }}</a></li>
+        <li><a {% if language_site_path is starting_with(pat="/about") %}class="current" {% endif %} href="{{ get_url(path="@/about/_index.md", lang=lang) }}">{{ trans(key="about", lang=lang) }}</a></li>
         {%- if config.extra.show.tags -%}
-        <li><a {% if language_site_path is starting_with("/tags") %}class="current" {% endif %} href="{{ get_url(path="@/_index.md", lang=lang) }}tags">{{ trans(key="tags", lang=lang) }}</a></li>
+        <li><a {% if language_site_path is starting_with(pat="/tags") %}class="current" {% endif %} href="{{ get_url(path="@/_index.md", lang=lang) }}tags">{{ trans(key="tags", lang=lang) }}</a></li>
         {%- endif -%}
-        <li><a {% if language_site_path is starting_with("/archive") %}class="current" {% endif %}
+        <li><a {% if language_site_path is starting_with(pat="/archive") %}class="current" {% endif %}
             href="{{ get_url(path="@/archive/_index.md", lang=lang) }}">{{ trans(key="archive", lang=lang) }}</a></li>
         {%- if config.extra.show.links -%}
-        <li><a {% if language_site_path is starting_with("/links") %}class="current" {% endif %} href="{{ get_url(path="@/links/_index.md", lang=lang) }}">{{ trans(key="links", lang=lang) }}</a></li>
+        <li><a {% if language_site_path is starting_with(pat="/links") %}class="current" {% endif %} href="{{ get_url(path="@/links/_index.md", lang=lang) }}">{{ trans(key="links", lang=lang) }}</a></li>
         {%- endif -%}
       </div>
       <div class="information">
@@ -125,8 +124,7 @@
           <button onclick="showLanguages()" aria-label="show languages"><i class="fas fa-globe"></i></button>
           <div id="languages" style="display: none">
             {% for language_name, language in config.languages %}
-            <a onclick="window.location.href='{{ get_url(path="@/about/_index.md", lang=language_name) |
-              trim_end_matches(pat='about/' )}}'"> {{ trans(key="language_name", lang=language_name) }} </a>
+            <a onclick="window.location.href='{{ get_url(path="@/about/_index.md", lang=language_name) | trim_end(pat='about/') }}'"> {{ trans(key="language_name", lang=language_name) }} </a>
             {% endfor %}
           </div>
         </div>
