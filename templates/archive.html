@@ -10,7 +10,7 @@
       {% set section_item = get_section(path=path) %}
     {% endif %}
     {% for year, posts in section_item.pages | group_by(attribute="year") %}
-      {% set language_posts = posts | filter(attribute="lang", value=lang) %}
+      {% set language_posts = [post for post in posts if post.lang == lang] %}
       {% if language_posts | length > 0 %}
         <div class="listing-title">{{ year }}</div>
         <ul class="listing">
